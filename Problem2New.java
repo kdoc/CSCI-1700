@@ -1,6 +1,6 @@
 package newProject2;
 
-public class videoGameMachine 
+public class GameMachine 
 {
 	public static void main(String[] args)
 	{
