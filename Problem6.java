@@ -1,4 +1,9 @@
 package assignment1;
+/**
+Problem 5
+@authors Keith Docka, Isse Nur, Xavier Jackson
+CSCI 1700-01
+*/
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
@@ -27,5 +32,6 @@ public class BabylonianAlgorithm
 		guess = (guess + r) / 2;
 		System.out.println("The estimated square root of " + n + " is " + 
 		                   formatterObject.format(guess) );
+		keyBoard.close();
 	}
 }
