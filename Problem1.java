@@ -1,5 +1,9 @@
 package assignment1;
-
+/**
+Problem 1
+@authors Keith Docka, Isse Nur, Xavier Jackson
+CSCI 1700-01
+*/
 public class CalorieCalculator 
 {
 	public static void main(String[] args)
@@ -17,5 +21,4 @@ public class CalorieCalculator
 		System.out.println("Total calories expended = " + (calRun + calBBall + calSleep) + "\n");
 		System.out.println("Process completed");
 	}
-
 }
