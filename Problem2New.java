@@ -1,6 +1,10 @@
-package newProject2;
-
-public class GameMachine 
+package assignment1;
+/**
+Problem 2
+@authors Keith Docka, Isse Nur, Xavier Jackson
+CSCI 1700-01
+*/
+public class ArcadeGame 
 {
 	public static void main(String[] args)
 	{
