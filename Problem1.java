@@ -14,7 +14,8 @@ public class CalorieCalculator
 		System.out.println("This person burned an estimated " + calBBall + 
 				           " calories playing basketball.");
 		System.out.println("This person burned an estimated " + calSleep + " calories sleeping.");
-		System.out.println("Total calories expended = " + (calRun + calBBall + calSleep));
+		System.out.println("Total calories expended = " + (calRun + calBBall + calSleep) + "\n");
+		System.out.println("Process completed");
 	}
 
 }
