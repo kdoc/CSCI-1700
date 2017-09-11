@@ -1,5 +1,9 @@
 package assignment1;
-
+/**
+Problem 3
+@authors Keith Docka, Isse Nur, Xavier Jackson
+CSCI 1700-01
+*/
 public class WordConverter 
 {
 	public static void main(String[] args)
