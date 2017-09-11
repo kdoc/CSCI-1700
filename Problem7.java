@@ -1,5 +1,3 @@
-package assignment1;
-
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
@@ -21,6 +19,7 @@ public class ValueDepreciation
 	    d =((p-s)/y);
 	    System.out.print("The yearly depreciation is ");
 	    System.out.println(formatterObject.format(d));
+	    keyBoard.close();
 	}
 	
 }
