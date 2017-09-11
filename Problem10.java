@@ -1,5 +1,9 @@
 package assignment1;
-
+/**
+Problem 10
+@authors Keith Docka, Isse Nur, Xavier Jackson
+CSCI 1700-01
+*/
 import java.util.Scanner;
 
 public class PigLatin 
@@ -19,6 +23,7 @@ public class PigLatin
 		last = last.toLowerCase();
 		last = last.substring(1,2).toUpperCase() + last.substring(2) + last.substring(0,1) + "ay";
 		System.out.println(first + " " + last + "\nProcess completed.");
+		keyBoard.close();
 	}
 
 }
