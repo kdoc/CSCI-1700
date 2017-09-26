@@ -3,6 +3,7 @@ package assignment2;
 
 public class FractionDemo
 { 
+	//Driver program for Fraction class
 	public static void main(String[] args)
 	{
 		System.out.println("Create a fraction with numerator 4, denominator 2");
