@@ -1,24 +1,50 @@
-package assignment1;
-/**
-Problem 1
-@authors Keith Docka, Isse Nur, Xavier Jackson
-CSCI 1700-01
-*/
-public class CalorieCalculator 
+package assignment2;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Problem1 
 {
 	public static void main(String[] args)
 	{
-		double weightLbs = 150.0, weightKg = weightLbs / 2.2, calRun = 0, calBBall = 0,
-			   calSleep = 0;
-		calRun = 0.0175 * 10 * weightKg * 30;
-		calBBall = 0.0175 * 8 * weightKg * 30;
-		calSleep = 0.0175 * weightKg * 360;
-		System.out.println("Welcome to the Calorie Calculator.\nFor a " + weightLbs + " person:");
-		System.out.println("This person burned an estimated " + calRun + " calories running.");
-		System.out.println("This person burned an estimated " + calBBall + 
-				           " calories playing basketball.");
-		System.out.println("This person burned an estimated " + calSleep + " calories sleeping.");
-		System.out.println("Total calories expended = " + (calRun + calBBall + calSleep) + "\n");
-		System.out.println("Process completed");
+		int n = 0;
+		double guess = 0, previousGuess = 0, r = 0;
+		Scanner keyBoard = new Scanner(System.in);
+		DecimalFormat formatterObject = new DecimalFormat("0.00000");
+		System.out.println("This program estimates square roots." );
+		do
+		{
+			System.out.println("Enter an integer to estimate the square root of:");
+			n = keyBoard.nextInt();
+			if(n < 0)
+			{
+				System.out.println("Invalid input");
+				System.out.println("Enter a non-negative integer value");
+			}
+		}while(n < 0);
+		
+		guess = (n / 2.0);
+		
+		if(n==0)
+		{
+			System.out.println("The estimated square root of " + n + " is " + 
+	                   formatterObject.format(guess) );
+			System.out.println("Process completed.");
+		}
+		else
+		{
+			do
+			{
+				previousGuess = guess;
+				r = (n / guess);
+				guess = (guess + r) / 2;
+				System.out.println("Current guess: " + guess);
+			}while(Math.abs(guess - previousGuess) > 0.00001);
+			System.out.println("The estimated square root of " + n + " is " + 
+		                   formatterObject.format(guess) );
+			System.out.println("Process completed.");
+		}
+		keyBoard.close();
 	}
+
 }

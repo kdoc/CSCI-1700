@@ -1,22 +1,47 @@
-package assignment1;
-/**
-Problem 4
-@authors Keith Docka, Isse Nur, Xavier Jackson
-CSCI 1700-01
-*/
-public class BigJava 
+package assignment2;
+
+import java.util.Scanner;
+import java.util.Locale;
+import java.text.NumberFormat;
+
+public class Problem4 
 {
 	public static void main(String[] args)
 	{
-		String j2 = "JJ", j3 = "JJJ", j7 = "JJJJJJJ",a2 = "aa", a8 = "aaaaaaaa",v2 = "VV", 
-			   v3 = "VVV";
-		System.out.println("  "+j7+"\n  "+j7);
-		System.out.println("    "+j3+"  "+a8+"  "+v2+"   "+v2+"  "+a8);
-		System.out.println("    "+j3+"  "+a8+"  "+v2+"   "+v2+"  "+a8);
-		System.out.println(j2+"  "+j3+"  "+a2+"    "+a2+"  "+v2+"   "+v2+"  "+a2+"    "+a2);
-		System.out.println(j2+"  "+j3+"  "+a8+"  "+v2+"   "+v2+"  "+a8);
-		System.out.println(j7+"  "+a2+"    "+a2+"   "+v2+" "+v2+"   "+a2+"    "+a2);
-		System.out.println(j7+"  "+a2+"    "+a2+"    "+v3+"    "+a2+"    "+a2);
+		int years = 0;
+		double cost = 0, inflationRate = 0;
+		Scanner keyboard = new Scanner(System.in);
+		do
+		{
+			System.out.println("Enter cost of item: ");
+			cost = keyboard.nextDouble();	
+		}while(cost < 0);
+		do
+		{
+			System.out.println("Enter number of (whole) years until the item is purchased: ");
+			years = keyboard.nextInt();
+		}while(years < 0);
+		System.out.println("Enter the inflation rate as a percentage (e.g., 5.6):");
+		inflationRate = keyboard.nextDouble() / 100;
+		displayCost(findCost(years,cost, inflationRate));
+		keyboard.close();
+	}
+	public static double findCost(int years, double cost, double inflationRate)
+	{
+		Scanner keyboard = new Scanner(System.in);
+		if(years > 0)
+			for(int i = 0; i < years; i++)
+			{
+				cost += cost*inflationRate;
+			}
+		keyboard.close();
+		return cost;
+	}
+	public static void displayCost(double cost)
+	{
+		NumberFormat formaterObject = NumberFormat.getCurrencyInstance(Locale.US);
+		System.out.println("The estimated final cost of the item will be "
+				+formaterObject.format(cost));
 	}
 
 }
