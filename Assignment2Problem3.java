@@ -1,6 +1,7 @@
 package assignment2;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Problem3 
 {
@@ -11,14 +12,15 @@ public class Problem3
 		do
 		{
 			int a = 0, b = 1, c = 0, d = 1;
+			String s;
 			String operand = "";
 			do
 			{
 				System.out.println("Enter first fraction in a / b form: ");
-				a = keyboard.nextInt();
-				keyboard.next();
-				b = keyboard.nextInt();
-				//System.out.printf("%d %d%n", a,b);
+				s = keyboard.nextLine();
+				StringTokenizer tknObject = new StringTokenizer(s,"/ ");
+				a = Integer.parseInt(tknObject.nextToken());
+				b = Integer.parseInt(tknObject.nextToken());
 				if(b == 0)
 				{
 					System.out.println("Invalid input.");
@@ -28,6 +30,7 @@ public class Problem3
 			{
 				System.out.println("Enter operation: ");
 				operand = keyboard.next();
+				keyboard.nextLine();
 				if (!(operand.equals("+")||operand.equals("-")||
 					operand.equals("/")||operand.equals("*")))
 					System.out.println("Invalid input");
@@ -36,9 +39,10 @@ public class Problem3
 			do
 			{
 				System.out.println("Enter second fraction in c / d form: ");
-				c = keyboard.nextInt();
-				keyboard.next();
-				d = keyboard.nextInt();
+				s = keyboard.nextLine();
+				StringTokenizer tknObject = new StringTokenizer(s,"/ ");
+				c = Integer.parseInt(tknObject.nextToken());
+				d = Integer.parseInt(tknObject.nextToken());
 				if(d == 0)
 					System.out.println("Invalid input");
 			}while(d == 0);
@@ -46,12 +50,12 @@ public class Problem3
 			{
 				case "+":
 					a = a*d+c*b;
-					b = c*d;
+					b = b*d;
 					System.out.printf("Sum = %d/%d%n", a, b);
 					break;
 				case "-":
 					a = a*d-c*b;
-					b = c*d;
+					b = b*d;
 					System.out.printf("Difference = %d/%d%n", a, b);
 					break;
 				case "/":
@@ -70,7 +74,7 @@ public class Problem3
 				//Continually prompts for a valid input 
 				//if none is given
 				System.out.println("Continue (y or n)");
-				prompt = keyboard.next();
+				prompt = keyboard.nextLine();
 			}while(!(prompt.equals("y") || prompt.equals("Y")
 					|| prompt.equals("n") || prompt.equals("N")));
 				
