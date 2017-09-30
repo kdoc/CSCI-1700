@@ -26,7 +26,7 @@ public class Date
 	{
 		setDate( 1, 1, year);
 	}
-	public Date(Date aDate)// no need to change
+	public Date(Date aDate)
 	{
 		if(aDate == null)//Not a real date.
 		{
