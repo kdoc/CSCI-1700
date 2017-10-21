@@ -8,6 +8,10 @@ public class Elevator
 	{
 		floor = 1;
 	}
+	public Elevator(Elevator original)
+	{
+		this.floor = original.floor;
+	}
 	public int getFloor()
 	{
 		return floor;
