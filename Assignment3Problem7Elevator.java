@@ -12,6 +12,11 @@ public class Elevator
 	//variable in other class definitions
 	public Elevator(Elevator original)
 	{
+		if(original == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		this.floor = original.floor;
 	}
 	public int getFloor()
