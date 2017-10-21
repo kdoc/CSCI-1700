@@ -8,6 +8,8 @@ public class Elevator
 	{
 		floor = 1;
 	}
+	//Added so that class can be used as a static 
+	//variable in other class definitions
 	public Elevator(Elevator original)
 	{
 		this.floor = original.floor;
