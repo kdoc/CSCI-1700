@@ -53,6 +53,8 @@ public class Complex
 	}
 	public boolean equals(Complex otherComplex)
 	{
+		if(otherComplex == null)
+			return false;
 		return (real == otherComplex.real &&
 				imaginary == otherComplex.imaginary);
 	}
@@ -64,30 +66,55 @@ public class Complex
 	}
 	public static Complex add(Complex c1, Complex c2)
 	{
+		if(c1 == null || c2 == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		Complex temp = new Complex(c1.real + c2.real,
 				c1.imaginary + c2.imaginary);
 		return temp;
 	}
 	public Complex add(Complex c)
 	{
+		if(c == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		Complex temp = new Complex(real + c.real,
 				imaginary + c.imaginary);
 		return temp;
 	}
 	public static Complex subtract(Complex c1, Complex c2)
 	{
+		if(c1 == null || c2 == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		Complex temp = new Complex(c1.real - c2.real,
 				c1.imaginary - c2.imaginary);
 		return temp;
 	}
 	public Complex subtract(Complex c)
 	{
+		if(c == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		Complex temp = new Complex(real - c.real,
 				imaginary - c.imaginary);
 		return temp;
 	}
 	public static Complex multiply(Complex c1, Complex c2)
 	{
+		if(c1 == null || c2 == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		Complex temp = new Complex(c1.real * c2.real -
 				c1.imaginary * c2.imaginary, 
 				c1.real * c2.imaginary +
@@ -96,6 +123,11 @@ public class Complex
 	}
 	public Complex multiply(Complex c)
 	{
+		if(c == null)
+		{
+			System.out.println("Fatal Error");
+			System.exit(0);
+		}
 		Complex temp = new Complex(real * c.real -
 				imaginary * c.imaginary, 
 				real * c.imaginary +
