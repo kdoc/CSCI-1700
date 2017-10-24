@@ -2,12 +2,7 @@ package assignment3;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
-/**
- * Assignment 3 Problem 6
- * @authors Keith Docka, Isse Nur, Xavier Jackson
- * CSCI 1700-01
- * 10/24/17
- */
+
 public class Problem6 
 {
 	public static void rollDice(int[] a, int tosses)
