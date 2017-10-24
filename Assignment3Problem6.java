@@ -2,7 +2,12 @@ package assignment3;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
-
+/**
+ * Assignment 3 Problem 6
+ * @authors Keith Docka, Isse Nur, Xavier Jackson
+ * CSCI 1700-01
+ * 10/24/17
+ */
 public class Problem6 
 {
 	public static void rollDice(int[] a, int tosses)
@@ -10,7 +15,8 @@ public class Problem6
 		for(int i =0; i < tosses; i++)
 			a[i] = (int)(6 * Math.random() + 1);
 	}
-	public static void findSum(int[] a, int[] a2, int[] tossSum, int tosses)
+	public static void findSum(int[] a, int[] a2, int[] tossSum, 
+			int tosses)
 	{
 		for(int i = 0; i < tosses ; i++)
 			tossSum[i] = a[i] + a2[i];
@@ -21,7 +27,8 @@ public class Problem6
 	 * @param counter an array with 12 indexes for possible sums
 	 * @param tosses
 	 */
-	public static void tossCount(int[] tossSum, int[] counter, int tosses)
+	public static void tossCount(int[] tossSum, int[] counter, 
+			int tosses)
 	{
 		if(counter.length != 13)
 		{
@@ -75,7 +82,8 @@ public class Problem6
 				"\nToss\tCount\tProbability");
 		for(int i = 0; i < counter.length-2; i++)
 		{
-			double probability = 100 * (counter[i+2])/((double)tosses);
+			double probability = 
+					100 * (counter[i+2])/((double)tosses);
 			System.out.println((i+2) + "\t" + counter[i+2] +
 					"\t" + formatter.format(probability));
 		}
@@ -84,13 +92,13 @@ public class Problem6
 	public static void main(String[] args)
 	{
 		Scanner keyboard = new Scanner(System.in);
-		int tosses;
-		int[] a, a2, tossSum, counter;
-		counter = new int[13];
-		for(int element: counter)
-			element = 0;
 		String prompt = "no";
 		do {
+			int tosses;
+			int[] a, a2, tossSum, counter;
+			counter = new int[13];
+			for(int element: counter)
+				element = 0;
 			System.out.println("Enter number of tosses: ");
 			tosses = keyboard.nextInt();
 			a = new int[tosses];
@@ -101,7 +109,8 @@ public class Problem6
 			findSum(a, a2, tossSum, tosses);
 			tossCount(tossSum, counter, tosses);
 			display(counter, tosses);
-			System.out.println("Do another simulation? (yes or no): ");
+			System.out.println("Do another simulation? "
+					+ "(yes or no): ");
 			prompt = keyboard.next();
 		}while(prompt.equalsIgnoreCase("yes"));
 		keyboard.close();
