@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 public class Problem6 
 {
-	public static String searchForFile(File dir, String target)
+	public static void searchForFile(File dir, String target)
 	{
 		String result = "";
 		if(!dir.isDirectory())
-			return "Path is not a directory.";
+			System.out.println("Path is not a directory.");
 		for(File folderItem : dir.listFiles())
 		{
 			if(folderItem.isDirectory())
 			{
-				result = searchForFile(folderItem, target);
+				searchForFile(folderItem, target);
 			}
 			else
 			{
@@ -26,7 +26,6 @@ public class Problem6
 							+ folderItem.getAbsolutePath());
 			}
 		}
-		return "";
 	}
 	public static void main(String[] args)
 	{
